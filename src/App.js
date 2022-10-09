@@ -7,6 +7,7 @@ import Orders from './Components/Orders/Orders';
 import About from './Components/About/About';
 
 function App() {
+  // create browser router using react-router-dom
   const router = createBrowserRouter([
     {
       path: '/',
@@ -14,10 +15,8 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Home></Home>
-        },
-        {
-          path: '/home',
+          //load json file data
+          loader: () => fetch('tshirts.json'),
           element: <Home></Home>
         },
         {
@@ -31,6 +30,7 @@ function App() {
       ]
     },
     {
+      // perform unknown path page
       path: '*',
       element: <div><h1>wrong Route Page</h1></div>
     }
