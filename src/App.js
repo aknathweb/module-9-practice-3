@@ -4,6 +4,7 @@ import Home from './Components/Home/Home';
 import Main from './Layout/Main';
 import Orders from './Components/Orders/Orders';
 import About from './Components/About/About';
+import Grandpa from './ContextComponents/Grandpa/Grandpa';
 
 function App() {
   // create browser router using react-router-dom
@@ -17,6 +18,10 @@ function App() {
           //load json file data
           loader: () => fetch('tshirts.json'),
           element: <Home></Home>
+        },
+        {
+          path: '/grandpa',
+          element: <Grandpa></Grandpa>
         },
         {
           path: '/orders',
